@@ -1,0 +1,23 @@
+ext {
+    versions = [
+            springBoot  : "2.7.3",
+            postgresql  : "42.5.0",
+            lombok      : "1.18.24",
+            mapstruct   : "1.5.2.Final"
+    ]
+    libs =  [
+                    springBoot      : "org.springframework.boot:spring-boot-starter:$versions.springBoot",
+                    springBootWeb   : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
+                    springBootJpa   : "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springBoot",
+                    springBootActuator : "org.springframework.boot:spring-boot-starter-actuator:$versions.springBoot",
+                    springValidation    : "org.springframework.boot:spring-boot-starter-validation:$versions.springBoot",
+                    springBootThymeleaf : "org.springframework.boot:spring-boot-starter-thymeleaf:$versions.springBoot",
+                    springBootDevtools : "org.springframework.boot:spring-boot-devtools:$versions.springBoot",
+                    postgresql      : "org.postgresql:postgresql:$versions.postgresql",
+                    lombok          : "org.projectlombok:lombok:$versions.lombok",
+                    mapstruct       : "org.mapstruct:mapstruct:$versions.mapstruct",
+                    mapstructProcessor : "org.mapstruct:mapstruct-processor:$versions.mapstruct",
+                    lombokMapstructBinding : "org.projectlombok:lombok-mapstruct-binding:0.2.0"
+            ]
+
+}
