@@ -42,6 +42,7 @@ allprojects{
         annotationProcessor libs.lombokMapstructBinding
         implementation libs.lombok
         annotationProcessor libs.lombok
+        implementation libs.openApi
     }
 }
 configurations {
