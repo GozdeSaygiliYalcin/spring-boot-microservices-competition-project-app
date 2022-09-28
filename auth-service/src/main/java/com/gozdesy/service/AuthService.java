@@ -10,6 +10,8 @@ import com.gozdesy.repository.enums.Role;
 import com.gozdesy.utility.ServiceManager;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AuthService extends ServiceManager<Auth, Long> {
 
@@ -21,9 +23,15 @@ public class AuthService extends ServiceManager<Auth, Long> {
         this.authRepository = authRepository;
         this.userManager = userManager;
     }
-    public boolean doLogin(DoLoginRequestDto dto) {
-        return authRepository.isExist(dto.getUsername(),
-                dto.getPassword());
+
+    /**
+     * nasıl bir metot
+     * @param dto
+     * @return
+     */
+    public Optional<Auth> doLogin(DoLoginRequestDto dto) {
+        return authRepository.findOptionalByUsernameIgnoreCaseAndPassword(dto.getUsername(),
+        dto.getPassword());
     }
 
     public Auth register(RegisterRequestDto dto){

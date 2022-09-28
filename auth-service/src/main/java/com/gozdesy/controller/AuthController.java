@@ -2,13 +2,15 @@ package com.gozdesy.controller;
 
 import com.gozdesy.dto.request.DoLoginRequestDto;
 import com.gozdesy.dto.request.RegisterRequestDto;
-import com.gozdesy.manager.IUserManager;
+import com.gozdesy.repository.entity.Auth;
 import com.gozdesy.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+
+import java.util.Optional;
 
 import static com.gozdesy.constant.ApiUrl.*;
 
@@ -20,9 +22,12 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping(LOGIN)
-    public ResponseEntity<String> doLogin(DoLoginRequestDto dto) {
-        if(authService.doLogin(dto))
-            return ResponseEntity.ok("Giriş Başarılı");
+    public ResponseEntity<String> doLogin(@RequestBody @Valid DoLoginRequestDto dto){
+        Optional<Auth> auth = authService.doLogin(dto);
+        if(auth.isPresent()) {
+            String token = "token: TKK"+ auth.get().getId().toString()+"X06Y4";
+            return ResponseEntity.ok(token);
+        }
         return ResponseEntity.badRequest().body("Giriş Başarısız");
     }
     @PostMapping (REGISTER)
