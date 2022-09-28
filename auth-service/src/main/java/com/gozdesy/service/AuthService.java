@@ -1,7 +1,9 @@
 package com.gozdesy.service;
 
 import com.gozdesy.dto.request.DoLoginRequestDto;
+import com.gozdesy.dto.request.NewUserCreateDto;
 import com.gozdesy.dto.request.RegisterRequestDto;
+import com.gozdesy.manager.IUserManager;
 import com.gozdesy.repository.IAuthRepository;
 import com.gozdesy.repository.entity.Auth;
 import com.gozdesy.repository.enums.Role;
@@ -12,10 +14,12 @@ import org.springframework.stereotype.Service;
 public class AuthService extends ServiceManager<Auth, Long> {
 
     private final IAuthRepository authRepository;
+    private final IUserManager userManager;
 
-    public AuthService(IAuthRepository authRepository) {
+    public AuthService(IAuthRepository authRepository, IUserManager userManager) {
         super(authRepository);
         this.authRepository = authRepository;
+        this.userManager = userManager;
     }
     public boolean doLogin(DoLoginRequestDto dto) {
         return authRepository.isExist(dto.getUsername(),
@@ -33,6 +37,14 @@ public class AuthService extends ServiceManager<Auth, Long> {
                 auth.setRole(dto.getRole()==null ? Role.ADMIN : dto.getRole());
             else
                 auth.setRole(Role.USER);
-        return save(auth);
+        save(auth);
+        userManager.NewUserCreate(
+                NewUserCreateDto.builder()
+                        .authId(auth.getId())
+                        .email(dto.getEmail())
+                        .username(dto.getUsername())
+                        .build()
+        );
+        return auth;
     }
 }

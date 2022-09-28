@@ -1,5 +1,5 @@
 rootProject.name = 'Microservices'
 include 'auth-service'
 include 'user-service'
-
+include 'main-service'
 

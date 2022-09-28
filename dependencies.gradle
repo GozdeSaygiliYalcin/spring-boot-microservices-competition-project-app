@@ -1,6 +1,7 @@
 ext {
     versions = [
             springBoot  : "2.7.3",
+            springCloud : "3.1.4",
             postgresql  : "42.5.0",
             lombok      : "1.18.24",
             mapstruct   : "1.5.2.Final",
@@ -14,6 +15,7 @@ ext {
                     springValidation    : "org.springframework.boot:spring-boot-starter-validation:$versions.springBoot",
                     springBootThymeleaf : "org.springframework.boot:spring-boot-starter-thymeleaf:$versions.springBoot",
                     springBootDevtools : "org.springframework.boot:spring-boot-devtools:$versions.springBoot",
+                    springOpenFeign    : "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.springCloud",
                     postgresql      : "org.postgresql:postgresql:$versions.postgresql",
                     lombok          : "org.projectlombok:lombok:$versions.lombok",
                     mapstruct       : "org.mapstruct:mapstruct:$versions.mapstruct",

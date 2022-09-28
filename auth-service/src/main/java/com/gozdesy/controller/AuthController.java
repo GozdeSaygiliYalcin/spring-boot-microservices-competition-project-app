@@ -2,6 +2,7 @@ package com.gozdesy.controller;
 
 import com.gozdesy.dto.request.DoLoginRequestDto;
 import com.gozdesy.dto.request.RegisterRequestDto;
+import com.gozdesy.manager.IUserManager;
 import com.gozdesy.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class AuthController {
             return ResponseEntity.ok("Giriş Başarılı");
         return ResponseEntity.badRequest().body("Giriş Başarısız");
     }
-    @GetMapping(REGISTER)
+    @PostMapping (REGISTER)
     public ResponseEntity<Void> register(@RequestBody @Valid RegisterRequestDto dto) {
         authService.register(dto);
         return ResponseEntity.ok().build();

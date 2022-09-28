@@ -43,6 +43,7 @@ allprojects{
         implementation libs.lombok
         annotationProcessor libs.lombok
         implementation libs.openApi
+        implementation libs.springOpenFeign
     }
 }
 configurations {
