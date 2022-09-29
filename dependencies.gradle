@@ -5,7 +5,8 @@ ext {
             postgresql  : "42.5.0",
             lombok      : "1.18.24",
             mapstruct   : "1.5.2.Final",
-            openApi         : "1.6.11"
+            openApi     : "1.6.11",
+            auth0       : "4.0.0",
     ]
     libs =  [
                     springBoot      : "org.springframework.boot:spring-boot-starter:$versions.springBoot",
@@ -16,12 +17,16 @@ ext {
                     springBootThymeleaf : "org.springframework.boot:spring-boot-starter-thymeleaf:$versions.springBoot",
                     springBootDevtools : "org.springframework.boot:spring-boot-devtools:$versions.springBoot",
                     springOpenFeign    : "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.springCloud",
+                    springCloudConfigServer: "org.springframework.cloud:spring-cloud-config-server:$versions.springCloud",
+                    springCloudConfigClient: "org.springframework.cloud:spring-cloud-config-client:$versions.springCloud",
+                    springCloudStarterConfig: "org.springframework.cloud:spring-cloud-starter-config:$versions.springCloud",
                     postgresql      : "org.postgresql:postgresql:$versions.postgresql",
                     lombok          : "org.projectlombok:lombok:$versions.lombok",
                     mapstruct       : "org.mapstruct:mapstruct:$versions.mapstruct",
                     mapstructProcessor : "org.mapstruct:mapstruct-processor:$versions.mapstruct",
                     lombokMapstructBinding : "org.projectlombok:lombok-mapstruct-binding:0.2.0",
                     openApi         : "org.springdoc:springdoc-openapi-ui:$versions.openApi",
+                    javaJWT         : "com.auth0:java-jwt:$versions.auth0",
             ]
 
 }

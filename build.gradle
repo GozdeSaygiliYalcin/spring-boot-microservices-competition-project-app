@@ -44,6 +44,7 @@ allprojects{
         annotationProcessor libs.lombok
         implementation libs.openApi
         implementation libs.springOpenFeign
+        implementation libs.javaJWT
     }
 }
 configurations {
