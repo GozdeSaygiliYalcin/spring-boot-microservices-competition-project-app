@@ -23,6 +23,10 @@ public class AuthController {
     private final AuthService authService;
     private final JwtTokenManager jwtTokenManager;
 
+    @GetMapping("/test")
+    public String getTestString() {
+        return "Auth test";
+    }
     @PostMapping(LOGIN)
     public ResponseEntity<String> doLogin(@RequestBody @Valid DoLoginRequestDto dto){
         Optional<Auth> auth = authService.doLogin(dto);

@@ -13,6 +13,7 @@
         <module name="Microservices.config-server.main" />
         <module name="Microservices.main-service.main" />
         <module name="Microservices.user-service.main" />
+        <module name="Microservices.api-gateway-service.main" />
         <module name="Microservices.auth-service.main" />
       </profile>
     </annotationProcessing>

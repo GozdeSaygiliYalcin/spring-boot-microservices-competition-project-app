@@ -13,7 +13,7 @@ allprojects{
     apply from: "${rootDir}/dependencies.gradle"
 }
 subprojects{
-    group 'com.muhammet'
+    group 'com.gozdesy'
     version 'v.0.1'
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
