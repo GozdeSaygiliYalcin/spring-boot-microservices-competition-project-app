@@ -1,13 +1,8 @@
-server:
-  port: 9091
-
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/competitionDBUser
-    username: postgres
-    password: 2211223
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  cloud:
+    config:
+      uri: http://localhost:8888
+  config:
+    import: "configserver:"
+  application:
+    name: user-service-application

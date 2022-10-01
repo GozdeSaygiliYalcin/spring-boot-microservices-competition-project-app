@@ -33,7 +33,6 @@ allprojects{
     dependencies {
         implementation libs.springBoot
         implementation libs.springBootWeb
-        implementation libs.springBootJpa
         implementation libs.springBootActuator
         implementation libs.springValidation
         developmentOnly libs.springBootDevtools
