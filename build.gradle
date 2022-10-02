@@ -3,6 +3,7 @@ plugins {
     id 'org.springframework.boot' version '2.7.3'
     id 'io.spring.dependency-management' version '1.0.13.RELEASE'
 }
+
 allprojects{
     apply plugin : 'java'
     apply plugin : 'eclipse'
@@ -12,6 +13,7 @@ allprojects{
     apply plugin : 'java-library'
     apply from: "${rootDir}/dependencies.gradle"
 }
+
 subprojects{
     group 'com.gozdesy'
     version 'v.0.1'
@@ -21,21 +23,24 @@ subprojects{
         options.encoding = 'UTF-8'
     }
 }
+
 allprojects{
     repositories {
         mavenCentral()
     }
+
     buildscript {
         repositories {
             mavenCentral()
         }
     }
+
     dependencies {
         implementation libs.springBoot
         implementation libs.springBootWeb
         implementation libs.springBootActuator
         implementation libs.springValidation
-        developmentOnly libs.springBootDevtools
+        // developmentOnly libs.springBootDevtools
         implementation libs.mapstruct
         annotationProcessor libs.mapstructProcessor
         annotationProcessor libs.lombokMapstructBinding
@@ -44,8 +49,10 @@ allprojects{
         implementation libs.openApi
         implementation libs.springOpenFeign
         implementation libs.javaJWT
+
     }
 }
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
