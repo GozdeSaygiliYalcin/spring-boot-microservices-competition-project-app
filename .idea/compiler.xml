@@ -9,9 +9,11 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok-mapstruct-binding/0.2.0/2f1cf9ced7b720ba4996c942b816669e63f0fa4f/lombok-mapstruct-binding-0.2.0.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.24/13a394eed5c4f9efb2a6d956e2086f1d81e857d9/lombok-1.18.24.jar" />
         </processorPath>
+        <module name="Microservices.main-service.main" />
+        <module name="Microservices.config-server-git.main" />
         <module name="Microservices.main" />
         <module name="Microservices.config-server.main" />
-        <module name="Microservices.main-service.main" />
+        <module name="Microservices.config-client-git.main" />
         <module name="Microservices.user-service.main" />
         <module name="Microservices.api-gateway-service.main" />
         <module name="Microservices.auth-service.main" />

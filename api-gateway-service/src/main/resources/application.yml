@@ -1,0 +1,36 @@
+server:
+  port: 80
+
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: api-gateway-service
+  cloud:
+    gateway:
+      default-filters:
+        - RewritePath=/(?<segment>.*), /v1/api/$\{segment}
+      routes:
+        - id: auth-service
+          uri: ${AUTHURL}
+          predicates:
+            - Path=/auth/**
+        - id: auth-service-swagger
+          uri: ${AUTHURL}
+          predicates:
+            - Path=/auth/swagger-ui/**
+          filters:
+            - RewritePath=/(?<segment>.*), /swagger-ui/$\{segment}
+        - id: main-service
+          uri: ${MAINURL}
+          predicates:
+            - Path=/main/**
+        - id: user-service
+          uri: ${USERURL}
+          predicates:
+            - Path=/user/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: user-service
+                fallbackUri: forward:/fallback/userService

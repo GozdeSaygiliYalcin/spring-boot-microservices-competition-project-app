@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gatewayployment
+  labels:
+    team: yarismadevelopersteam
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway-service
+  template:
+    metadata:
+      labels:
+        app: gateway-service
+    spec:
+      containers:
+        - image: gozdesaygiliyalcin/competitionapigateway:v001
+          name: podgateway
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "0.1"
+            limits:
+              memory: "2Gi"
+              cpu: "0.25"
+          ports:
+            - containerPort: 80
+          env:
+            - name: AUTHURL
+              valueFrom:
+                secretKeyRef:
+                  name: competitionsecret
+                  key: gateway_auth_url
+            - name: MAINURL
+              valueFrom:
+                secretKeyRef:
+                  name: competitionsecret
+                  key: gateway_main_url
+            - name: USERURL
+              valueFrom:
+                secretKeyRef:
+                  name: competitionsecret
+                  key: gateway_user_url

@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: userployment
+  labels:
+    team: yarismadevelopersteam
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+        - image: muhammedali55/yarismauygulamasiuser:v001
+          name: poduser
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "0.1"
+            limits:
+              memory: "2Gi"
+              cpu: "0.25"
+          ports:
+            - containerPort: 9091
+          env:
+            - name: SERVERPORT
+              valueFrom:
+                secretKeyRef:
+                  name: competitionsecret
+                  key: user_port
+            - name: DBUSERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: competitionsecret
+                  key: db_username
+            - name: DBPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: competitionsecret
+                  key: db_password
+            - name: DBURL
+              valueFrom:
+                secretKeyRef:
+                  name: competitionsecret
+                  key: db_url
+            - name: AUTHURL
+              valueFrom:
+                secretKeyRef:
+                  name: competitionsecret
+                  key: auth_url
+            - name: MAINURL
+              valueFrom:
+                secretKeyRef:
+                  name: competitionsecret
+                  key: main_url
+            - name: USERURL
+              valueFrom:
+                secretKeyRef:
+                  name: yarismasecret
+                  key: user_url
