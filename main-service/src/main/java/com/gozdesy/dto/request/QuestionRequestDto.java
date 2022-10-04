@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class QuestionRequestDto {
+
+    private String token;
     private Long adminId;
     private String questionContent;
     private int duration;

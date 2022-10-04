@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Microservices.config-server.main/Hibernate" uuid="8481f343-3f5d-41a2-b3a0-eaddb582e802">
+      <driver-ref>athena</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>com.simba.athena.jdbc42.Driver</jdbc-driver>
+      <jdbc-url>${DBURL}</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="Microservices.config-server.test/Hibernate" uuid="ebe73159-b4db-4659-96cf-6bda03dc40cb">
+      <driver-ref>athena</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>com.simba.athena.jdbc42.Driver</jdbc-driver>
+      <jdbc-url>${DBURL}</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

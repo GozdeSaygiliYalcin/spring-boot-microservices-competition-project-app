@@ -16,6 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 public interface IUserManager {
 
     @PostMapping("/newcreateuser")
-    ResponseEntity<Boolean> NewUserCreate(NewUserCreateDto dto);
+    ResponseEntity<Void> NewUserCreate(NewUserCreateDto dto);
 
 }

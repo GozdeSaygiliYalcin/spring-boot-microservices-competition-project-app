@@ -1,0 +1,15 @@
+server:
+  port: 8899
+
+spring:
+  application:
+    name: config-server-git
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/GozdeSaygiliYalcin/git-config-list"
+          default-label: main
+          username: "GozdeSaygiliYalcin"
+          password: "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"
+          skip-ssl-validation: true

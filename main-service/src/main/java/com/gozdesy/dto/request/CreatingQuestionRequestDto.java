@@ -13,6 +13,7 @@ import java.util.List;
 @Builder
 public class CreatingQuestionRequestDto {
 
+    private String token;
     private QuestionRequestDto questionRequestDto;
     private List<AnswerRequestDto> answerRequestDtos;
 }
