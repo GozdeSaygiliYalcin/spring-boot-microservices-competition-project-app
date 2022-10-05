@@ -1,4 +1,4 @@
-package com.gozdesy.utility;
+package com.gozdesy.config.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

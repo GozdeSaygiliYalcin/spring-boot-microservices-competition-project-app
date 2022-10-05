@@ -4,7 +4,7 @@ import com.gozdesy.dto.request.DoLoginRequestDto;
 import com.gozdesy.dto.request.RegisterRequestDto;
 import com.gozdesy.repository.entity.Auth;
 import com.gozdesy.service.AuthService;
-import com.gozdesy.utility.JwtTokenManager;
+import com.gozdesy.config.security.JwtTokenManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

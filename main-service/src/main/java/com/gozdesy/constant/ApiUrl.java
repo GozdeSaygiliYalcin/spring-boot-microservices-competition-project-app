@@ -14,4 +14,7 @@ public class ApiUrl {
     public static final String CREATE_QUESTION_GROUP = "/createquestiongroup";
     public static final String QUESTION = "/question";
     public static final String CREATE = "/create";
+    public static final String COMPETITION = "/competition";
+
+    public static final String COMPETITION_QUESTION = "/competitionquestion";
 }

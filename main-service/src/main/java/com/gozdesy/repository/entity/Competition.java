@@ -21,7 +21,7 @@ public class Competition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    Long competiterId;
+    Long competitorId;
     String competitionTitle;
     String competitionDefinition;
     String picture;

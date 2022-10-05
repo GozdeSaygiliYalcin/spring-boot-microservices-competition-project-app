@@ -1,7 +1,6 @@
 package com.gozdesy.controller;
 
 import com.gozdesy.dto.request.CreatingQuestionRequestDto;
-import com.gozdesy.dto.request.QuestionRequestDto;
 import com.gozdesy.exception.ErrorType;
 import com.gozdesy.exception.MainServiceException;
 import com.gozdesy.service.QuestionService;

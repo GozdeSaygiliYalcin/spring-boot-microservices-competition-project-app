@@ -24,7 +24,7 @@ public class Question {
     String questionContent;
     int duration;
     int numberOfOption;
-    String numberOfGroup;
+    String nameOfGroup;
     @Enumerated(EnumType.STRING)
     @Builder.Default
     State state = State.AWAITINGAPPROVAL;

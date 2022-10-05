@@ -1,5 +1,7 @@
 package com.gozdesy.service;
 
+import com.gozdesy.dto.request.CompetitionQuestionRequestDto;
+import com.gozdesy.mapper.ICompetitionQuestionMapper;
 import com.gozdesy.repository.ICompetitionQuestionRepository;
 import com.gozdesy.repository.entity.CompetitionQuestion;
 import com.gozdesy.utility.ServiceManager;
@@ -13,5 +15,9 @@ public class CompetitionQuestionService extends ServiceManager<CompetitionQuesti
     public CompetitionQuestionService(ICompetitionQuestionRepository competitionQuestionRepository) {
         super(competitionQuestionRepository);
         this.competitionQuestionRepository = competitionQuestionRepository;
+    }
+
+    public CompetitionQuestion save(CompetitionQuestionRequestDto dto) {
+        return save(ICompetitionQuestionMapper.INSTANCE.toCompetitionQuestion(dto));
     }
 }

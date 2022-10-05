@@ -13,6 +13,7 @@ ext {
             springBoot                             : "org.springframework.boot:spring-boot-starter:$versions.springBoot",
             springBootWeb                          : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
             springBootJpa                          : "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springBoot",
+            springBootSecurity                     : "org.springframework.boot:spring-boot-starter-security:$versions.springBoot",
             springBootActuator                     : "org.springframework.boot:spring-boot-starter-actuator:$versions.springBoot",
             springValidation                       : "org.springframework.boot:spring-boot-starter-validation:$versions.springBoot",
             springBootThymeleaf                    : "org.springframework.boot:spring-boot-starter-thymeleaf:$versions.springBoot",
