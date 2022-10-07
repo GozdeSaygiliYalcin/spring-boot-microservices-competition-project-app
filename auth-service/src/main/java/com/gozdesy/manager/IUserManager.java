@@ -4,6 +4,9 @@ import com.gozdesy.dto.request.NewUserCreateDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import javax.validation.Valid;
 
 /**
  * microservis yapısında başka bir
@@ -16,6 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 public interface IUserManager {
 
     @PostMapping("/newcreateuser")
-    ResponseEntity<Void> NewUserCreate(NewUserCreateDto dto);
+    ResponseEntity<Void> NewUserCreate(@RequestBody @Valid NewUserCreateDto dto);
 
 }

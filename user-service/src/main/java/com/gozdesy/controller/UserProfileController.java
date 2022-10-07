@@ -6,18 +6,19 @@ import com.gozdesy.dto.request.EditProfileRequestDto;
 import com.gozdesy.dto.request.NewUserCreateDto;
 import com.gozdesy.exception.ErrorType;
 import com.gozdesy.exception.UserManagerException;
+import com.gozdesy.repository.entity.UserProfile;
 import com.gozdesy.service.UserProfileService;
 import com.gozdesy.utility.JwtTokenManager;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import static com.gozdesy.constant.ApiUrl.*;
@@ -50,5 +51,14 @@ public class UserProfileController {
         } catch (Exception exception) {
             throw new UserManagerException((ErrorType.INVALID_TOKEN));
         }
+    }
+
+//    @GetMapping(FINDALL)
+//    public ResponseEntity<Page<UserProfile>> findAll(int currentPage, int pageSize,  String sortParameter, String direction){
+//        return ResponseEntity.ok(userProfileService.findAllPage(currentPage,pageSize, sortParameter, direction));
+//    }
+    @GetMapping(FINDALL)
+    public ResponseEntity<Page<UserProfile>> findAll(int currentPage, int pageSize,  String sortParameter, String direction){
+        return ResponseEntity.ok(userProfileService.findAllPage(currentPage,pageSize, sortParameter, direction));
     }
 }
