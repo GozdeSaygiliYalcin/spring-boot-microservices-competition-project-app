@@ -1,7 +1,19 @@
 server:
   port: 9091
 
+logging:
+  level:
+    root: WARN
+    org.gozdesy: DEBUG
+    org.springframework: INFO
+  file:
+    name: user-service-application.log
+
 spring:
+  redis:
+    host: localhost
+    port: 6379
+
   datasource:
     url: 'jdbc:postgresql://localhost:5432/competitionDB'
     username: 'postgres'

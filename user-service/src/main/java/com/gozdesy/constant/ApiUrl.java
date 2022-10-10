@@ -13,4 +13,6 @@ public class ApiUrl {
     public static final String UPDATE_PROFILE = "/updateprofile";
 
     public static final String FINDALL = "/findall";
+
+    public static final String FINDALLSLICE = "/findallslice";
 }

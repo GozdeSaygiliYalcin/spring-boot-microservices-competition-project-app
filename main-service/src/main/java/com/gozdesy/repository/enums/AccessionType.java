@@ -4,4 +4,8 @@ public enum AccessionType {
 
     NOTAPPROVED, APPROVED, REJECTED, PASSIVE;
 
+    public enum Role {
+
+        ADMIN, USER
+    }
 }

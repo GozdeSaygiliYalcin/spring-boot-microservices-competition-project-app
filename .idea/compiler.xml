@@ -13,6 +13,7 @@
         <module name="Microservices.config-server-git.main" />
         <module name="Microservices.main" />
         <module name="Microservices.config-server.main" />
+        <module name="Microservices.elastic-service.main" />
         <module name="Microservices.config-client-git.main" />
         <module name="Microservices.user-service.main" />
         <module name="Microservices.api-gateway-service.main" />

@@ -8,6 +8,7 @@ ext {
             mapstruct                : "1.5.2.Final",
             openApi                  : "1.6.11",
             auth0                    : "4.0.0",
+            graphql                  : "11.1.0"
     ]
     libs =  [
             springBoot                             : "org.springframework.boot:spring-boot-starter:$versions.springBoot",
@@ -17,6 +18,8 @@ ext {
             springBootActuator                     : "org.springframework.boot:spring-boot-starter-actuator:$versions.springBoot",
             springValidation                       : "org.springframework.boot:spring-boot-starter-validation:$versions.springBoot",
             springBootThymeleaf                    : "org.springframework.boot:spring-boot-starter-thymeleaf:$versions.springBoot",
+            springBootDataRedis                    : "org.springframework.boot:spring-boot-starter-data-redis:$versions.springBoot",
+            springBootDataElasticSearch            : "org.springframework.boot:spring-boot-starter-data-elasticsearch:$versions.springBoot",
             springBootDevtools                     : "org.springframework.boot:spring-boot-devtools:$versions.springBoot",
             springOpenFeign                        : "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.springCloud",
             springCloudConfigServer                : "org.springframework.cloud:spring-cloud-config-server:$versions.springCloud",
@@ -32,6 +35,9 @@ ext {
             lombokMapstructBinding                 : "org.projectlombok:lombok-mapstruct-binding:0.2.0",
             openApi                                : "org.springdoc:springdoc-openapi-ui:$versions.openApi",
             javaJWT                                : "com.auth0:java-jwt:$versions.auth0",
+            GraphqlJavaTools                       : "com.graphql-java-kickstart:graphql-java-tools:$versions.graphql",
+            GraphqlSpringBootStarter               : "com.graphql-java-kickstart:graphql-spring-boot-starter:$versions.graphql",
+            GraphiqlJavaTools                      : "com.graphql-java-kickstart:graphiql-spring-boot-starter:$versions.graphql"
             ]
 
 }
