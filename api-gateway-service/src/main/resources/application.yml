@@ -6,6 +6,11 @@ spring:
     web-application-type: reactive
   application:
     name: api-gateway-service
+  zipkin:
+    base-url: http://localhost:9411
+    enabled: true
+    service:
+      name: api-gateway-service
   cloud:
     gateway:
       default-filters:
