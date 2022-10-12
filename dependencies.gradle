@@ -16,6 +16,7 @@ ext {
             springBootJpa                          : "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springBoot",
             springBootSecurity                     : "org.springframework.boot:spring-boot-starter-security:$versions.springBoot",
             springBootActuator                     : "org.springframework.boot:spring-boot-starter-actuator:$versions.springBoot",
+            springBootRabbitMQ                     : "org.springframework.boot:spring-boot-starter-amqp:$versions.springBoot",
             springValidation                       : "org.springframework.boot:spring-boot-starter-validation:$versions.springBoot",
             springBootThymeleaf                    : "org.springframework.boot:spring-boot-starter-thymeleaf:$versions.springBoot",
             springBootDataRedis                    : "org.springframework.boot:spring-boot-starter-data-redis:$versions.springBoot",

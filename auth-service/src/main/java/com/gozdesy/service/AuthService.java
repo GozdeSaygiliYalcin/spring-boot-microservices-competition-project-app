@@ -4,6 +4,8 @@ import com.gozdesy.dto.request.DoLoginRequestDto;
 import com.gozdesy.dto.request.NewUserCreateDto;
 import com.gozdesy.dto.request.RegisterRequestDto;
 import com.gozdesy.manager.IUserManager;
+import com.gozdesy.rabbitmq.model.CreateUser;
+import com.gozdesy.rabbitmq.producer.CreateUserProducer;
 import com.gozdesy.repository.IAuthRepository;
 import com.gozdesy.repository.entity.Auth;
 import com.gozdesy.repository.enums.Role;
@@ -18,10 +20,13 @@ public class AuthService extends ServiceManager<Auth, Long> {
     private final IAuthRepository authRepository;
     private final IUserManager userManager;
 
-    public AuthService(IAuthRepository authRepository, IUserManager userManager) {
+    private final CreateUserProducer userProducer;
+
+    public AuthService(IAuthRepository authRepository, IUserManager userManager, CreateUserProducer userProducer) {
         super(authRepository);
         this.authRepository = authRepository;
         this.userManager = userManager;
+        this.userProducer = userProducer;
     }
 
     /**
@@ -53,6 +58,12 @@ public class AuthService extends ServiceManager<Auth, Long> {
                         .username(dto.getUsername())
                         .build()
         );
+        userProducer.sendCreateUserMessage(CreateUser.builder()
+                .authId(auth.getId())
+                .email(dto.getEmail())
+                .username(dto.getUsername())
+                .password(dto.getPassword())
+                .build());
         return auth;
     }
 }

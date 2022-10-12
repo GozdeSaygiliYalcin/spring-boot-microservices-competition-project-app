@@ -1,6 +1,10 @@
 server:
   port: 8888
 spring:
+  rabbitmq:
+    port: 5672
+    username: gozde
+    password: 2211223Qwe
   application:
     name: config-server
   profiles:
