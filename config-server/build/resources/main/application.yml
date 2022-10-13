@@ -1,15 +1,15 @@
 server:
   port: 8888
 spring:
-  application:
-    name: config-server
-  profiles:
-    active: native
   zipkin:
     base-url: http://localhost:9411
     enabled: true
     service:
-      name: config-server
+      name: config-service
+  application:
+    name: config-server
+  profiles:
+    active: native
   cloud:
     config:
       server:

@@ -108,5 +108,9 @@ public class UserProfileController {
         userProfileService.clearCache(key, parameter);
     }
 
+    @GetMapping("/findallelastic")
+    public ResponseEntity<List<UserProfile>> findAllElastic(){
+        return ResponseEntity.ok(userProfileService.findAll());
+    }
 
 }

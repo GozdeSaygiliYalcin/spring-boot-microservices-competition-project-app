@@ -4,10 +4,11 @@ server:
 logging:
   level:
     root: WARN
-    org.gozdesy: DEBUG
+    com.gozdesy: DEBUG
     org.springframework: INFO
   file:
     name: user-service-application.log
+    max-size: 1MB
 
 spring:
   rabbitmq:
@@ -22,16 +23,13 @@ spring:
   redis:
     host: localhost
     port: 6379
-
-  datasource:
-    url: 'jdbc:postgresql://localhost:5432/competitionDB'
-    username: 'postgres'
-    password: '2211223'
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  data:
+    mongodb:
+      host: 35.232.50.215
+      port: 19589
+      database: boostcompetition
+      username: boostuser
+      password: "Aa123456*"
 
 raceapplication:
   url:
